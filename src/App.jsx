@@ -593,9 +593,9 @@ const StepUpCalculatorWidget = () => {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 animate-in fade-in zoom-in-95 duration-500 text-left">
       <div className="lg:col-span-7 space-y-6 lg:space-y-8">
-        <div className="bg-amber-50 border border-amber-200 p-5 rounded-2xl mb-4 shadow-sm">
-          <p className="text-sm text-amber-900 font-medium flex items-start gap-3">
-             <Zap className="w-5 h-5 text-amber-600 shrink-0 mt-0.5 animate-pulse" />
+        <div className="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl mb-4 shadow-sm">
+          <p className="text-sm text-emerald-900 font-medium flex items-start gap-3">
+             <Zap className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 animate-pulse" />
              Step-Up SIP dramatically compresses your wealth creation timeline by aligning your investments with your annual salary hikes.
           </p>
         </div>
@@ -604,33 +604,33 @@ const StepUpCalculatorWidget = () => {
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Initial Monthly SIP</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{formatCurrency(initialSip)}</div>
           </div>
-          <input type="range" min="1000" max="200000" step="1000" value={initialSip} onChange={(e) => setInitialSip(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-amber-600" />
+          <input type="range" min="1000" max="200000" step="1000" value={initialSip} onChange={(e) => setInitialSip(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={150} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Annual Step-Up</label>
-            <div className="text-xl sm:text-2xl font-light text-amber-600 bg-amber-50 px-4 py-2 rounded-xl border border-amber-200 w-full sm:w-auto shadow-sm">{stepUpPercent}%</div>
+            <div className="text-xl sm:text-2xl font-light text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200 w-full sm:w-auto shadow-sm">{stepUpPercent}%</div>
           </div>
-          <input type="range" min="1" max="25" step="1" value={stepUpPercent} onChange={(e) => setStepUpPercent(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-amber-600" />
+          <input type="range" min="1" max="25" step="1" value={stepUpPercent} onChange={(e) => setStepUpPercent(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={200} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Period (Years)</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{years} Years</div>
           </div>
-          <input type="range" min="1" max="30" step="1" value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-amber-600" />
+          <input type="range" min="1" max="30" step="1" value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={250} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
              <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Expected Return</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{expectedReturn}%</div>
           </div>
-          <input type="range" min="5" max="25" step="0.5" value={expectedReturn} onChange={(e) => setExpectedReturn(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-amber-600" />
+          <input type="range" min="5" max="25" step="0.5" value={expectedReturn} onChange={(e) => setExpectedReturn(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
       </div>
       <div className="lg:col-span-5 group">
         <FadeIn delay={300} direction="zoom" className="bg-zinc-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-          <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-amber-500/20 to-transparent rounded-full blur-[40px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+          <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/20 to-transparent rounded-full blur-[40px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
           <div className="space-y-6 relative z-10 mb-10">
             <div className="bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
               <p className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-400 uppercase mb-1">Total Invested</p>
@@ -638,11 +638,11 @@ const StepUpCalculatorWidget = () => {
             </div>
             <div className="bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
               <p className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-400 uppercase mb-1">Wealth Gained</p>
-              <p className="text-xl sm:text-2xl font-light text-amber-400">+{formatCurrency(wealthGained)}</p>
+              <p className="text-xl sm:text-2xl font-light text-emerald-400">+{formatCurrency(wealthGained)}</p>
             </div>
           </div>
           <div className="pt-8 border-t border-zinc-800 relative z-10">
-            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-amber-500/80 uppercase mb-3">Accelerated Future Value</p>
+            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-emerald-500/80 uppercase mb-3">Accelerated Future Value</p>
             <p className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-tight leading-none">{formatCurrency(futureValue)}</p>
           </div>
         </FadeIn>
@@ -797,9 +797,9 @@ const EmiMatchSipWidget = () => {
             <div>
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
                 <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Loan Interest</label>
-                <div className="text-xl sm:text-2xl font-light text-red-600 bg-red-50 px-4 py-2 rounded-xl border border-red-200 w-full sm:w-auto shadow-sm">{loanInterest}%</div>
+                <div className="text-xl sm:text-2xl font-light text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200 w-full sm:w-auto shadow-sm">{loanInterest}%</div>
               </div>
-              <input type="range" min="6" max="20" step="0.5" value={loanInterest} onChange={(e) => setLoanInterest(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-red-600" />
+              <input type="range" min="6" max="20" step="0.5" value={loanInterest} onChange={(e) => setLoanInterest(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
             </div>
             <div>
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
@@ -827,7 +827,7 @@ const EmiMatchSipWidget = () => {
           <div className="pt-8 border-t border-violet-900/60 relative z-10">
             <p className="text-[10px] sm:text-xs font-bold tracking-widest text-violet-300 uppercase mb-3">If EMI amount were invested instead</p>
             <p className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-tight leading-none mb-5">{formatCurrency(sipFutureValue)}</p>
-            <p className={`text-xs font-medium inline-block px-4 py-2 rounded-lg border ${decisionGap >= 0 ? 'text-emerald-300 bg-emerald-900/30 border-emerald-500/20' : 'text-red-300 bg-red-900/30 border-red-500/20'}`}>
+            <p className={`text-xs font-medium inline-block px-4 py-2 rounded-lg border ${decisionGap >= 0 ? 'text-emerald-300 bg-emerald-900/30 border-emerald-500/20' : 'text-emerald-300 bg-emerald-900/30 border-emerald-500/20'}`}>
               Net difference vs asset cost: {formatCurrency(decisionGap)}
             </p>
           </div>
@@ -856,9 +856,9 @@ const EmiVsSipCalculatorWidget = () => {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 animate-in fade-in zoom-in-95 duration-500 text-left">
       <div className="lg:col-span-7 space-y-6 lg:space-y-8">
-        <div className="bg-red-50 border border-red-200 p-5 rounded-2xl mb-4 shadow-sm">
-          <p className="text-sm text-red-900 font-medium flex items-start gap-3">
-            <PieChart className="w-5 h-5 text-red-600 shrink-0 mt-0.5 animate-pulse" />
+        <div className="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl mb-4 shadow-sm">
+          <p className="text-sm text-emerald-900 font-medium flex items-start gap-3">
+            <PieChart className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 animate-pulse" />
             The Cost of Debt: See the exact wealth you forfeit when you choose to pay an EMI instead of investing it.
           </p>
         </div>
@@ -867,21 +867,21 @@ const EmiVsSipCalculatorWidget = () => {
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Loan Amount</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{formatCurrency(loanAmount)}</div>
           </div>
-          <input type="range" min="100000" max="50000000" step="100000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-red-600" />
+          <input type="range" min="100000" max="50000000" step="100000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={150} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Loan Tenure</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{tenureYears} Years</div>
           </div>
-          <input type="range" min="1" max="30" step="1" value={tenureYears} onChange={(e) => setTenureYears(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-red-600" />
+          <input type="range" min="1" max="30" step="1" value={tenureYears} onChange={(e) => setTenureYears(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={200} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Loan Interest Rate</label>
-            <div className="text-xl sm:text-2xl font-light text-red-600 bg-red-50 px-4 py-2 rounded-xl border border-red-200 w-full sm:w-auto shadow-sm">{loanInterest}%</div>
+            <div className="text-xl sm:text-2xl font-light text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200 w-full sm:w-auto shadow-sm">{loanInterest}%</div>
           </div>
-          <input type="range" min="5" max="20" step="0.1" value={loanInterest} onChange={(e) => setLoanInterest(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-red-600" />
+          <input type="range" min="5" max="20" step="0.1" value={loanInterest} onChange={(e) => setLoanInterest(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={250} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
@@ -896,11 +896,11 @@ const EmiVsSipCalculatorWidget = () => {
           <div className="space-y-6 relative z-10 mb-10">
             <div className="bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
               <p className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-400 uppercase mb-1">Your Monthly EMI</p>
-              <p className="text-2xl sm:text-3xl font-light text-red-400">{formatCurrency(emi)}</p>
+              <p className="text-2xl sm:text-3xl font-light text-emerald-400">{formatCurrency(emi)}</p>
             </div>
             <div className="bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
               <p className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-400 uppercase mb-1">Total Paid to Bank</p>
-              <p className="text-xl sm:text-2xl font-light text-zinc-300">{formatCurrency(totalPaidToBank)} <span className="text-[10px] sm:text-xs text-red-400 block sm:inline sm:ml-2">({formatCurrency(totalInterestPaid)} interest)</span></p>
+              <p className="text-xl sm:text-2xl font-light text-zinc-300">{formatCurrency(totalPaidToBank)} <span className="text-[10px] sm:text-xs text-emerald-400 block sm:inline sm:ml-2">({formatCurrency(totalInterestPaid)} interest)</span></p>
             </div>
           </div>
           <div className="pt-8 border-t border-zinc-800 relative z-10">
@@ -977,9 +977,9 @@ const ExtraEmiCalculatorWidget = () => {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 animate-in fade-in zoom-in-95 duration-500 text-left">
       <div className="lg:col-span-7 space-y-6 lg:space-y-8">
-        <div className="bg-sky-50 border border-sky-200 p-5 rounded-2xl mb-4 shadow-sm">
-          <p className="text-sm text-sky-900 font-medium flex items-start gap-3">
-             <ChevronsDown className="w-5 h-5 text-sky-600 shrink-0 mt-0.5 animate-bounce" />
+        <div className="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl mb-4 shadow-sm">
+          <p className="text-sm text-emerald-900 font-medium flex items-start gap-3">
+             <ChevronsDown className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 animate-bounce" />
              Prepayment Accelerator: See exactly how much time and interest you save by maintaining your original EMI after a rate drop, combined with extra yearly payments.
           </p>
         </div>
@@ -987,15 +987,15 @@ const ExtraEmiCalculatorWidget = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <FadeIn delay={100} direction="left" className="space-y-3">
               <label className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-500 uppercase flex justify-between"><span>Loan Amount</span> <span className="text-zinc-900 font-bold">{formatShortAmt(loanAmount)}</span></label>
-              <input type="range" min="1000000" max="50000000" step="500000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-sky-600" />
+              <input type="range" min="1000000" max="50000000" step="500000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
             </FadeIn>
             <FadeIn delay={150} direction="left" className="space-y-3">
               <label className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-500 uppercase flex justify-between"><span>Original Tenure</span> <span className="text-zinc-900 font-bold">{originalTenure} Years</span></label>
-              <input type="range" min="5" max="30" step="1" value={originalTenure} onChange={(e) => setOriginalTenure(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-sky-600" />
+              <input type="range" min="5" max="30" step="1" value={originalTenure} onChange={(e) => setOriginalTenure(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
             </FadeIn>
             <FadeIn delay={200} direction="left" className="space-y-3">
               <label className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-500 uppercase flex justify-between"><span>Original Rate</span> <span className="text-zinc-900 font-bold">{originalRate}%</span></label>
-              <input type="range" min="6" max="15" step="0.1" value={originalRate} onChange={(e) => setOriginalRate(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-sky-600" />
+              <input type="range" min="6" max="15" step="0.1" value={originalRate} onChange={(e) => setOriginalRate(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
             </FadeIn>
             <FadeIn delay={250} direction="left" className="space-y-3">
               <label className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-500 uppercase flex justify-between"><span>Current Rate</span> <span className="text-emerald-600 font-bold">{currentRate}%</span></label>
@@ -1006,31 +1006,31 @@ const ExtraEmiCalculatorWidget = () => {
         <div className="pt-6 border-t border-zinc-100">
             <FadeIn delay={300} direction="left" className="mb-6 space-y-3">
               <label className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-500 uppercase flex justify-between"><span>Extra EMIs per year</span> <span className="text-zinc-900 font-bold">{extraEmisPerYear}</span></label>
-              <input type="range" min="0" max="12" step="1" value={extraEmisPerYear} onChange={(e) => setExtraEmisPerYear(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-sky-600" />
+              <input type="range" min="0" max="12" step="1" value={extraEmisPerYear} onChange={(e) => setExtraEmisPerYear(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
             </FadeIn>
             <FadeIn delay={350} direction="left" className="space-y-3">
               <label className="text-[10px] sm:text-xs font-medium tracking-widest text-zinc-500 uppercase flex justify-between"><span>Extra EMI amount (₹)</span> <span className="text-zinc-900 font-bold">{formatCurrency(extraEmiAmount)}</span></label>
-              <input type="range" min="10000" max="500000" step="10000" value={extraEmiAmount} onChange={(e) => setExtraEmiAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-sky-600" />
+              <input type="range" min="10000" max="500000" step="10000" value={extraEmiAmount} onChange={(e) => setExtraEmiAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
             </FadeIn>
         </div>
       </div>
       
       <div className="lg:col-span-5 group">
-        <FadeIn delay={400} direction="zoom" className="bg-sky-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-          <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-sky-500/20 to-transparent rounded-full blur-[50px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+        <FadeIn delay={400} direction="zoom" className="bg-emerald-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/20 to-transparent rounded-full blur-[50px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
           
           <div className="space-y-6 relative z-10 mb-8">
-            <div className="grid grid-cols-2 gap-4 border-b border-sky-800/50 pb-6">
+            <div className="grid grid-cols-2 gap-4 border-b border-emerald-800/50 pb-6">
               <div className="bg-white/5 p-3 rounded-xl border border-white/10">
-                <p className="text-[9px] font-medium tracking-widest text-sky-200 uppercase mb-1">Loan amount</p>
+                <p className="text-[9px] font-medium tracking-widest text-emerald-200 uppercase mb-1">Loan amount</p>
                 <p className="text-base font-medium">{formatShortAmt(loanAmount)}</p>
               </div>
               <div className="bg-white/5 p-3 rounded-xl border border-white/10">
-                <p className="text-[9px] font-medium tracking-widest text-sky-200 uppercase mb-1">Monthly EMI</p>
+                <p className="text-[9px] font-medium tracking-widest text-emerald-200 uppercase mb-1">Monthly EMI</p>
                 <p className="text-base font-medium">{formatCurrency(originalEMI)}</p>
               </div>
               <div className="bg-white/5 p-3 rounded-xl border border-white/10">
-                <p className="text-[9px] font-medium tracking-widest text-sky-200 uppercase mb-1">Original Rate</p>
+                <p className="text-[9px] font-medium tracking-widest text-emerald-200 uppercase mb-1">Original Rate</p>
                 <p className="text-base font-medium">{originalRate}%</p>
               </div>
                <div className="bg-emerald-500/10 p-3 rounded-xl border border-emerald-500/20">
@@ -1040,7 +1040,7 @@ const ExtraEmiCalculatorWidget = () => {
             </div>
 
             <div className="bg-black/20 rounded-2xl p-5 border border-white/5">
-               <p className="text-[10px] font-medium tracking-widest text-sky-300 uppercase mb-4">Tenure comparison</p>
+               <p className="text-[10px] font-medium tracking-widest text-emerald-300 uppercase mb-4">Tenure comparison</p>
                <div className="grid grid-cols-3 gap-3">
                   <div>
                      <p className="text-[9px] text-zinc-400 mb-1">At {originalRate}% (org)</p>
@@ -1048,7 +1048,7 @@ const ExtraEmiCalculatorWidget = () => {
                   </div>
                   <div>
                      <p className="text-[9px] text-zinc-400 mb-1">At {currentRate}% (same EMI)</p>
-                     <p className="text-sm font-semibold text-sky-400">{formatYM(monthsRateDrop)}</p>
+                     <p className="text-sm font-semibold text-emerald-400">{formatYM(monthsRateDrop)}</p>
                   </div>
                   <div>
                      <p className="text-[9px] text-zinc-400 mb-1">At {currentRate}% + prepay</p>
@@ -1059,12 +1059,12 @@ const ExtraEmiCalculatorWidget = () => {
 
             <div className="grid grid-cols-3 gap-3 mt-6">
                <div className="bg-white/5 p-3 rounded-xl border border-white/10">
-                  <p className="text-[8px] font-medium tracking-widest text-sky-200 uppercase mb-1">Saved by rate drop</p>
-                  <p className="text-sm font-bold text-sky-400 mb-1">{formatYM(safeTime(savedTimeRateDrop))}</p>
+                  <p className="text-[8px] font-medium tracking-widest text-emerald-200 uppercase mb-1">Saved by rate drop</p>
+                  <p className="text-sm font-bold text-emerald-400 mb-1">{formatYM(safeTime(savedTimeRateDrop))}</p>
                   <p className="text-[9px] text-zinc-400">{formatShortAmt(safeMoney(savedMoneyRateDrop))}</p>
                </div>
                <div className="bg-white/5 p-3 rounded-xl border border-white/10">
-                  <p className="text-[8px] font-medium tracking-widest text-sky-200 uppercase mb-1">Saved by prepay</p>
+                  <p className="text-[8px] font-medium tracking-widest text-emerald-200 uppercase mb-1">Saved by prepay</p>
                   <p className="text-sm font-bold text-emerald-400 mb-1">{formatYM(safeTime(savedTimePrepay))}</p>
                   <p className="text-[9px] text-zinc-400">{formatShortAmt(safeMoney(savedMoneyPrepay))}</p>
                </div>
@@ -1104,9 +1104,9 @@ const SmartEmiCalculatorWidget = () => {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 animate-in fade-in zoom-in-95 duration-500 text-left">
       <div className="lg:col-span-7 space-y-6 lg:space-y-8">
-        <div className="bg-teal-50 border border-teal-200 p-5 rounded-2xl mb-4 shadow-sm">
-          <p className="text-sm text-teal-900 font-medium flex items-start gap-3">
-             <Sparkles className="w-5 h-5 text-teal-600 shrink-0 mt-0.5 animate-pulse" />
+        <div className="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl mb-4 shadow-sm">
+          <p className="text-sm text-emerald-900 font-medium flex items-start gap-3">
+             <Sparkles className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 animate-pulse" />
              Loan Cost Recovery: Build a parallel SIP that can recover just your interest, your principal, or your entire principal plus interest outflow.
           </p>
         </div>
@@ -1122,7 +1122,7 @@ const SmartEmiCalculatorWidget = () => {
                 onClick={() => setRecoveryMode(option.id)}
                 className={`px-4 py-2 rounded-xl text-xs font-medium tracking-wide transition-all duration-300 border ${
                   recoveryMode === option.id
-                    ? 'bg-teal-600 text-white border-teal-600 shadow-lg shadow-teal-600/20'
+                    ? 'bg-emerald-600 text-white border-emerald-600 shadow-lg shadow-emerald-600/20'
                     : 'bg-white text-zinc-600 border-zinc-200 hover:border-zinc-300'
                 }`}
               >
@@ -1136,50 +1136,50 @@ const SmartEmiCalculatorWidget = () => {
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Loan Amount</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{formatCurrency(loanAmount)}</div>
           </div>
-          <input type="range" min="500000" max="50000000" step="100000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-teal-600" />
+          <input type="range" min="500000" max="50000000" step="100000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={150} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Loan Tenure</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{tenureYears} Years</div>
           </div>
-          <input type="range" min="5" max="30" step="1" value={tenureYears} onChange={(e) => setTenureYears(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-teal-600" />
+          <input type="range" min="5" max="30" step="1" value={tenureYears} onChange={(e) => setTenureYears(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={200} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Home Loan Interest</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{loanInterest}%</div>
           </div>
-          <input type="range" min="6" max="15" step="0.1" value={loanInterest} onChange={(e) => setLoanInterest(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-teal-600" />
+          <input type="range" min="6" max="15" step="0.1" value={loanInterest} onChange={(e) => setLoanInterest(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={250} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
              <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Expected SIP Return</label>
-            <div className="text-xl sm:text-2xl font-light text-teal-600 bg-teal-50 px-4 py-2 rounded-xl border border-teal-200 w-full sm:w-auto shadow-sm">{sipReturn}%</div>
+            <div className="text-xl sm:text-2xl font-light text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200 w-full sm:w-auto shadow-sm">{sipReturn}%</div>
           </div>
-          <input type="range" min="8" max="25" step="0.5" value={sipReturn} onChange={(e) => setSipReturn(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-teal-600" />
+          <input type="range" min="8" max="25" step="0.5" value={sipReturn} onChange={(e) => setSipReturn(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
       </div>
       <div className="lg:col-span-5 group">
-        <FadeIn delay={300} direction="zoom" className="bg-teal-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-teal-500/30 to-transparent rounded-full blur-[60px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+        <FadeIn delay={300} direction="zoom" className="bg-emerald-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/30 to-transparent rounded-full blur-[60px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
           
           <div className="space-y-6 relative z-10 mb-8">
             <div className="bg-white/5 p-5 rounded-2xl backdrop-blur-sm border border-white/10 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-teal-200 uppercase">Your EMI</p>
+              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-emerald-200 uppercase">Your EMI</p>
               <p className="text-xl font-medium text-white">{formatCurrency(emi)}</p>
             </div>
-            <div className="bg-red-500/10 p-5 rounded-2xl backdrop-blur-sm border border-red-500/20 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-red-300 uppercase">Target Corpus</p>
-              <p className="text-xl font-medium text-red-400">{formatCurrency(targetCorpus)}</p>
+            <div className="bg-emerald-500/10 p-5 rounded-2xl backdrop-blur-sm border border-emerald-500/20 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-emerald-300 uppercase">Target Corpus</p>
+              <p className="text-xl font-medium text-emerald-400">{formatCurrency(targetCorpus)}</p>
             </div>
           </div>
 
           <div className="pt-8 relative z-10">
-            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-teal-400 uppercase mb-4">Required Monthly SIP to recover {recoveryLabel}</p>
+            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-emerald-400 uppercase mb-4">Required Monthly SIP to recover {recoveryLabel}</p>
             <p className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-none mb-8">{formatCurrency(requiredSip)}</p>
-            <div className="inline-flex items-center gap-3 bg-teal-900/50 border border-teal-500/30 text-teal-300 text-sm font-medium px-5 py-3 rounded-xl shadow-inner">
-              <Sparkles className="w-5 h-5 text-teal-400 animate-pulse" /> That's just {sipPercentageOfEmi}% of your EMI amount!
+            <div className="inline-flex items-center gap-3 bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 text-sm font-medium px-5 py-3 rounded-xl shadow-inner">
+              <Sparkles className="w-5 h-5 text-emerald-400 animate-pulse" /> That's just {sipPercentageOfEmi}% of your EMI amount!
             </div>
           </div>
         </FadeIn>
@@ -1230,9 +1230,9 @@ const EarlyClosureWidget = () => {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 animate-in fade-in zoom-in-95 duration-500 text-left">
       <div className="lg:col-span-7 space-y-6 lg:space-y-8">
-        <div className="bg-indigo-50 border border-indigo-200 p-5 rounded-2xl mb-4 shadow-sm">
-          <p className="text-sm text-indigo-900 font-medium flex items-start gap-3">
-             <ShieldCheck className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5 animate-pulse" />
+        <div className="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl mb-4 shadow-sm">
+          <p className="text-sm text-emerald-900 font-medium flex items-start gap-3">
+             <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 animate-pulse" />
              The Debt Destroyer: Calculate the exact parallel SIP required to build a corpus large enough to foreclose your home loan years ahead of schedule.
           </p>
         </div>
@@ -1248,7 +1248,7 @@ const EarlyClosureWidget = () => {
                 onClick={() => setClosureMode(option.id)}
                 className={`px-4 py-2 rounded-xl text-xs font-medium tracking-wide transition-all duration-300 border ${
                   closureMode === option.id
-                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-600/20'
+                    ? 'bg-emerald-600 text-white border-emerald-600 shadow-lg shadow-emerald-600/20'
                     : 'bg-white text-zinc-600 border-zinc-200 hover:border-zinc-300'
                 }`}
               >
@@ -1262,61 +1262,61 @@ const EarlyClosureWidget = () => {
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Loan Amount</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{formatCurrency(loanAmount)}</div>
           </div>
-          <input type="range" min="500000" max="50000000" step="100000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-600" />
+          <input type="range" min="500000" max="50000000" step="100000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={150} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Original Loan Tenure</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{originalTenure} Years</div>
           </div>
-          <input type="range" min="5" max="30" step="1" value={originalTenure} onChange={(e) => setOriginalTenure(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-600" />
+          <input type="range" min="5" max="30" step="1" value={originalTenure} onChange={(e) => setOriginalTenure(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={200} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Target Closure Time</label>
-            <div className="text-xl sm:text-2xl font-light text-indigo-600 bg-indigo-50 px-4 py-2 rounded-xl border border-indigo-200 w-full sm:w-auto shadow-sm">{targetTenure} Years</div>
+            <div className="text-xl sm:text-2xl font-light text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200 w-full sm:w-auto shadow-sm">{targetTenure} Years</div>
           </div>
-          <input type="range" min="1" max={Math.max(originalTenure - 1, 1)} step="1" value={targetTenure} onChange={(e) => setTargetTenure(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-600" />
+          <input type="range" min="1" max={Math.max(originalTenure - 1, 1)} step="1" value={targetTenure} onChange={(e) => setTargetTenure(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={250} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Loan Interest Rate</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{loanInterest}%</div>
           </div>
-          <input type="range" min="6" max="15" step="0.1" value={loanInterest} onChange={(e) => setLoanInterest(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-600" />
+          <input type="range" min="6" max="15" step="0.1" value={loanInterest} onChange={(e) => setLoanInterest(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={300} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
              <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Expected SIP Return</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{sipReturn}%</div>
           </div>
-          <input type="range" min="8" max="25" step="0.5" value={sipReturn} onChange={(e) => setSipReturn(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-600" />
+          <input type="range" min="8" max="25" step="0.5" value={sipReturn} onChange={(e) => setSipReturn(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
       </div>
       <div className="lg:col-span-5 group">
-        <FadeIn delay={350} direction="zoom" className="bg-indigo-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-500/30 to-transparent rounded-full blur-[60px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+        <FadeIn delay={350} direction="zoom" className="bg-emerald-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/30 to-transparent rounded-full blur-[60px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
           
           <div className="space-y-6 relative z-10 mb-8">
             <div className="bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-indigo-200 uppercase">Your Regular EMI</p>
+              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-emerald-200 uppercase">Your Regular EMI</p>
               <p className="text-xl font-medium text-white">{formatCurrency(emi)}</p>
             </div>
             <div className="bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <div>
-                 <p className="text-[10px] sm:text-xs font-medium tracking-widest text-indigo-200 uppercase">{targetLabel}</p>
+                 <p className="text-[10px] sm:text-xs font-medium tracking-widest text-emerald-200 uppercase">{targetLabel}</p>
                  <p className="text-[9px] text-zinc-400 mt-0.5">Corpus needed at year {targetTenure}</p>
               </div>
-              <p className="text-xl font-medium text-red-400">{formatCurrency(targetCorpus)}</p>
+              <p className="text-xl font-medium text-emerald-400">{formatCurrency(targetCorpus)}</p>
             </div>
           </div>
 
           <div className="pt-6 relative z-10">
-            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-indigo-400 uppercase mb-3">Required Monthly SIP to close early</p>
+            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">Required Monthly SIP to close early</p>
             <p className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-none mb-8">{formatCurrency(requiredSip)}</p>
             
             <div className="flex flex-col gap-3">
-              <div className="inline-flex items-center gap-3 bg-indigo-900/50 border border-indigo-500/30 text-indigo-300 text-sm font-medium px-4 py-3 rounded-xl w-fit">
+              <div className="inline-flex items-center gap-3 bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 text-sm font-medium px-4 py-3 rounded-xl w-fit">
                 <Activity className="w-4 h-4 shrink-0" /> Save {yearsSaved} years of EMIs
               </div>
               <div className="inline-flex items-center gap-3 bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 text-sm font-medium px-4 py-3 rounded-xl w-fit">
@@ -1342,9 +1342,9 @@ const FireCalculatorWidget = () => {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 animate-in fade-in zoom-in-95 duration-500 text-left">
       <div className="lg:col-span-7 space-y-6 lg:space-y-8">
-        <div className="bg-rose-50 border border-rose-200 p-5 rounded-2xl mb-4 shadow-sm">
-          <p className="text-sm text-rose-900 font-medium flex items-start gap-3">
-             <Map className="w-5 h-5 text-rose-600 shrink-0 mt-0.5 animate-pulse" />
+        <div className="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl mb-4 shadow-sm">
+          <p className="text-sm text-emerald-900 font-medium flex items-start gap-3">
+             <Map className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 animate-pulse" />
              Financial Independence, Retire Early. Calculate the exact corpus required to stop working and live purely off your portfolio yields.
           </p>
         </div>
@@ -1353,35 +1353,35 @@ const FireCalculatorWidget = () => {
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Current Monthly Expenses</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{formatCurrency(monthlyExpenses)}</div>
           </div>
-          <input type="range" min="20000" max="500000" step="5000" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-rose-600" />
+          <input type="range" min="20000" max="500000" step="5000" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={200} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Years to Retirement</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{yearsToRetire} Years</div>
           </div>
-          <input type="range" min="1" max="40" step="1" value={yearsToRetire} onChange={(e) => setYearsToRetire(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-rose-600" />
+          <input type="range" min="1" max="40" step="1" value={yearsToRetire} onChange={(e) => setYearsToRetire(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={300} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Expected Inflation</label>
-            <div className="text-xl sm:text-2xl font-light text-rose-600 bg-rose-50 px-4 py-2 rounded-xl border border-rose-200 w-full sm:w-auto shadow-sm">{inflation}%</div>
+            <div className="text-xl sm:text-2xl font-light text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200 w-full sm:w-auto shadow-sm">{inflation}%</div>
           </div>
-          <input type="range" min="3" max="12" step="0.5" value={inflation} onChange={(e) => setInflation(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-rose-600" />
+          <input type="range" min="3" max="12" step="0.5" value={inflation} onChange={(e) => setInflation(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
       </div>
       <div className="lg:col-span-5 group">
-        <FadeIn delay={400} direction="zoom" className="bg-rose-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-rose-500/30 to-transparent rounded-full blur-[60px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+        <FadeIn delay={400} direction="zoom" className="bg-emerald-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/30 to-transparent rounded-full blur-[60px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
           <div className="space-y-6 relative z-10 mb-10">
             <div className="bg-white/5 p-5 rounded-2xl backdrop-blur-sm border border-white/10">
-              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-rose-200 uppercase mb-2">Projected Future Monthly Expense</p>
+              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-emerald-200 uppercase mb-2">Projected Future Monthly Expense</p>
               <p className="text-2xl sm:text-3xl font-light text-white">{formatCurrency(futureAnnualExp / 12)}</p>
-              <p className="text-xs text-rose-300/70 mt-1">Adjusted for {inflation}% inflation</p>
+              <p className="text-xs text-emerald-300/70 mt-1">Adjusted for {inflation}% inflation</p>
             </div>
           </div>
-          <div className="pt-8 border-t border-rose-800/50 relative z-10">
-            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-rose-400 uppercase mb-3">Target F.I.R.E. Corpus</p>
+          <div className="pt-8 border-t border-emerald-800/50 relative z-10">
+            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">Target F.I.R.E. Corpus</p>
             <p className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-none mb-4">{formatCurrency(requiredCorpus)}</p>
           </div>
         </FadeIn>
@@ -1462,34 +1462,34 @@ const GoalCalculatorWidget = () => {
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Target Goal Amount</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{formatCurrency(targetAmount)}</div>
           </div>
-          <input type="range" min="100000" max="100000000" step="100000" value={targetAmount} onChange={(e) => setTargetAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-fuchsia-600" />
+          <input type="range" min="100000" max="100000000" step="100000" value={targetAmount} onChange={(e) => setTargetAmount(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={200} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Time to Goal</label>
             <div className="text-xl sm:text-2xl font-light text-zinc-900 bg-white px-4 py-2 rounded-xl border border-zinc-200 w-full sm:w-auto shadow-sm">{years} Years</div>
           </div>
-          <input type="range" min="1" max="40" step="1" value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-fuchsia-600" />
+          <input type="range" min="1" max="40" step="1" value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
         <FadeIn delay={300} direction="left">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 mb-3">
             <label className="text-xs font-medium tracking-widest text-zinc-500 uppercase">Expected Return (p.a)</label>
-            <div className="text-xl sm:text-2xl font-light text-fuchsia-600 bg-fuchsia-50 px-4 py-2 rounded-xl border border-fuchsia-200 w-full sm:w-auto shadow-sm">{expectedReturn}%</div>
+            <div className="text-xl sm:text-2xl font-light text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200 w-full sm:w-auto shadow-sm">{expectedReturn}%</div>
           </div>
-          <input type="range" min="5" max="25" step="0.5" value={expectedReturn} onChange={(e) => setExpectedReturn(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-fuchsia-600" />
+          <input type="range" min="5" max="25" step="0.5" value={expectedReturn} onChange={(e) => setExpectedReturn(Number(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
         </FadeIn>
       </div>
       <div className="lg:col-span-5 group">
-        <FadeIn delay={400} direction="zoom" className="bg-fuchsia-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-fuchsia-600/30 to-transparent rounded-full blur-[60px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+        <FadeIn delay={400} direction="zoom" className="bg-emerald-950 text-white p-8 lg:p-10 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-600/30 to-transparent rounded-full blur-[60px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
           <div className="space-y-6 relative z-10 mb-10">
             <div className="bg-white/5 p-5 rounded-2xl backdrop-blur-sm border border-white/10">
-              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-fuchsia-200 uppercase mb-2">To reach your goal of</p>
+              <p className="text-[10px] sm:text-xs font-medium tracking-widest text-emerald-200 uppercase mb-2">To reach your goal of</p>
               <p className="text-2xl sm:text-3xl font-light text-white">{formatCurrency(targetAmount)}</p>
             </div>
           </div>
-          <div className="pt-8 border-t border-fuchsia-800/50 relative z-10">
-            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-fuchsia-400 uppercase mb-3">Required Monthly SIP</p>
+          <div className="pt-8 border-t border-emerald-800/50 relative z-10">
+            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">Required Monthly SIP</p>
             <p className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-none">{formatCurrency(requiredSip)}</p>
           </div>
         </FadeIn>
@@ -1588,7 +1588,7 @@ const AIAssistantWidget = ({ openContactModal }) => {
 // --- ABOUT PAGE COMPONENT ---
 const AboutPage = ({ setCurrentPage, openContactModal }) => {
   return (
-    <div className="pt-32 pb-10 animate-in fade-in duration-700 text-left bg-sky-50/30">
+    <div className="pt-32 pb-10 animate-in fade-in duration-700 text-left bg-emerald-50/30">
       <section className="px-6 sm:px-10 lg:px-16 xl:px-24 w-full max-w-[1800px] mx-auto py-16 lg:py-24">
         <FadeIn direction="down">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tighter text-zinc-950 mb-6 leading-[1.05]">
@@ -1632,7 +1632,7 @@ const AboutPage = ({ setCurrentPage, openContactModal }) => {
         </div>
       </section>
 
-      <section className="bg-fuchsia-50/50 py-24 px-6 sm:px-10 lg:px-16 xl:px-24">
+      <section className="bg-emerald-50/50 py-24 px-6 sm:px-10 lg:px-16 xl:px-24">
         <div className="w-full max-w-[1800px] mx-auto">
           <FadeIn className="mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tighter mb-4 text-zinc-900">The Ask Geo Pillars</h2>
@@ -1645,8 +1645,8 @@ const AboutPage = ({ setCurrentPage, openContactModal }) => {
               { title: "Fiduciary Duty", desc: "Your interests always precede ours. We grow only when your portfolio grows." },
               { title: "Holistic Planning", desc: "We look beyond mere returns, focusing on taxation, risk, and succession." }
             ].map((item, idx) => (
-              <FadeIn key={idx} delay={idx * 150} direction="up" className="bg-white border border-fuchsia-100 p-8 sm:p-10 rounded-[2rem] hover:border-emerald-200 hover:shadow-xl hover:shadow-fuchsia-100 transition-all duration-500 group hover:-translate-y-2">
-                <div className="w-12 h-12 bg-fuchsia-100 text-fuchsia-600 rounded-xl flex items-center justify-center font-mono text-lg font-medium mb-6 group-hover:bg-emerald-100 group-hover:text-emerald-600 transition-colors duration-500">
+              <FadeIn key={idx} delay={idx * 150} direction="up" className="bg-white border border-emerald-100 p-8 sm:p-10 rounded-[2rem] hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-100 transition-all duration-500 group hover:-translate-y-2">
+                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-mono text-lg font-medium mb-6 group-hover:bg-emerald-100 group-hover:text-emerald-600 transition-colors duration-500">
                   0{idx + 1}
                 </div>
                 <h4 className="text-xl sm:text-2xl font-medium mb-3 text-zinc-900">{item.title}</h4>
@@ -1657,11 +1657,11 @@ const AboutPage = ({ setCurrentPage, openContactModal }) => {
         </div>
       </section>
 
-      <section className="bg-amber-50/40 px-6 sm:px-10 lg:px-16 xl:px-24 py-24 border-t border-amber-100/50">
+      <section className="bg-emerald-50/40 px-6 sm:px-10 lg:px-16 xl:px-24 py-24 border-t border-emerald-100/50">
          <div className="w-full max-w-[1800px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <FadeIn direction="left" className="lg:w-1/3 w-full">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tighter mb-8 text-zinc-900">Leadership</h2>
-              <div className="aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] bg-white rounded-[2rem] p-2 relative overflow-hidden group shadow-2xl shadow-amber-100 border border-amber-100">
+              <div className="aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] bg-white rounded-[2rem] p-2 relative overflow-hidden group shadow-2xl shadow-emerald-100 border border-emerald-100">
                  <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative">
                    <img src="https://static.wixstatic.com/media/548938_3bb01f88ba6541a195f21b0b543cd613~mv2.png" alt="Geo Thomas" className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000" />
                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-900/10 to-transparent"></div>
@@ -1673,7 +1673,7 @@ const AboutPage = ({ setCurrentPage, openContactModal }) => {
               </div>
             </FadeIn>
             <FadeIn delay={200} direction="right" className="lg:w-2/3 flex flex-col justify-center">
-              <Quote className="w-12 h-12 text-amber-200 mb-8" strokeWidth={1} />
+              <Quote className="w-12 h-12 text-emerald-200 mb-8" strokeWidth={1} />
               <p className="text-xl sm:text-2xl lg:text-3xl font-light leading-relaxed text-zinc-900 mb-8">
                 "I started Ask Geo because I saw a massive gap between what institutions were doing to grow wealth and what retail investors were being sold. I wanted to level the playing field."
               </p>
@@ -1706,11 +1706,11 @@ const ServicesPage = ({ setCurrentPage, openContactModal }) => {
         </FadeIn>
       </section>
 
-      <section className="bg-rose-50/40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto py-20 lg:py-28 border-y border-rose-100/50">
+      <section className="bg-emerald-50/40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto py-20 lg:py-28 border-y border-emerald-100/50">
         <div className="max-w-[1800px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <FadeIn direction="right" className="order-2 lg:order-1">
-            <div className="w-16 h-16 bg-white border border-rose-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-              <Briefcase className="w-8 h-8 text-rose-600" strokeWidth={1.5} />
+            <div className="w-16 h-16 bg-white border border-emerald-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+              <Briefcase className="w-8 h-8 text-emerald-600" strokeWidth={1.5} />
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tighter mb-6 text-zinc-900">Wealth Management</h2>
             <p className="text-sm sm:text-base lg:text-lg text-zinc-600 font-light leading-relaxed mb-8">
@@ -1726,27 +1726,27 @@ const ServicesPage = ({ setCurrentPage, openContactModal }) => {
             </button>
           </FadeIn>
           <FadeIn delay={200} direction="left" className="order-1 lg:order-2">
-            <div className="aspect-[4/3] bg-white rounded-[2.5rem] border border-rose-100 relative overflow-hidden shadow-2xl shadow-rose-100/50 group">
-               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-rose-100/50 to-transparent group-hover:scale-105 transition-transform duration-1000"></div>
-               <PieChart className="absolute -bottom-10 -right-10 w-72 h-72 text-rose-50/80 group-hover:-rotate-12 transition-transform duration-1000" strokeWidth={0.5} />
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-rose-100/50 rounded-full blur-2xl animate-pulse"></div>
+            <div className="aspect-[4/3] bg-white rounded-[2.5rem] border border-emerald-100 relative overflow-hidden shadow-2xl shadow-emerald-100/50 group">
+               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-100/50 to-transparent group-hover:scale-105 transition-transform duration-1000"></div>
+               <PieChart className="absolute -bottom-10 -right-10 w-72 h-72 text-emerald-50/80 group-hover:-rotate-12 transition-transform duration-1000" strokeWidth={0.5} />
+               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-emerald-100/50 rounded-full blur-2xl animate-pulse"></div>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      <section className="bg-indigo-50/50 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto py-20 lg:py-28">
+      <section className="bg-emerald-50/50 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto py-20 lg:py-28">
         <div className="max-w-[1800px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <FadeIn direction="right">
-            <div className="aspect-[4/3] bg-white rounded-[2.5rem] border border-indigo-100 relative overflow-hidden shadow-2xl shadow-indigo-100/50 group">
-               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-indigo-100/50 to-transparent group-hover:scale-105 transition-transform duration-1000"></div>
-               <TrendingUp className="absolute -top-10 -left-10 w-72 h-72 text-indigo-50/80 group-hover:rotate-12 transition-transform duration-1000" strokeWidth={0.5} />
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-indigo-100/50 rounded-full blur-2xl animate-pulse"></div>
+            <div className="aspect-[4/3] bg-white rounded-[2.5rem] border border-emerald-100 relative overflow-hidden shadow-2xl shadow-emerald-100/50 group">
+               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-emerald-100/50 to-transparent group-hover:scale-105 transition-transform duration-1000"></div>
+               <TrendingUp className="absolute -top-10 -left-10 w-72 h-72 text-emerald-50/80 group-hover:rotate-12 transition-transform duration-1000" strokeWidth={0.5} />
+               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-emerald-100/50 rounded-full blur-2xl animate-pulse"></div>
             </div>
           </FadeIn>
           <FadeIn delay={200} direction="left">
-            <div className="w-16 h-16 bg-white border border-indigo-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-              <Activity className="w-8 h-8 text-indigo-600" strokeWidth={1.5} />
+            <div className="w-16 h-16 bg-white border border-emerald-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+              <Activity className="w-8 h-8 text-emerald-600" strokeWidth={1.5} />
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tighter mb-6 text-zinc-900">Portfolio Management</h2>
             <p className="text-sm sm:text-base lg:text-lg text-zinc-600 font-light leading-relaxed mb-8">
@@ -1862,10 +1862,10 @@ const CalculatorsPage = ({ setCurrentPage, openContactModal }) => {
         </div>
       </section>
 
-      <section className="bg-rose-50/40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto py-20 lg:py-28 flex flex-col items-center text-center">
+      <section className="bg-emerald-50/40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto py-20 lg:py-28 flex flex-col items-center text-center">
         <FadeIn direction="up" className="flex flex-col items-center max-w-2xl">
-          <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-rose-100">
-            <Calculator className="w-8 h-8 text-rose-600" />
+          <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-emerald-100">
+            <Calculator className="w-8 h-8 text-emerald-600" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tighter mb-6 text-zinc-900">Numbers look good?</h2>
           <p className="text-zinc-600 font-light mb-10 text-base sm:text-lg leading-relaxed">Calculators show possibilities. Our experts turn them into realities. Let Ask Geo build the portfolio that executes your math.</p>
@@ -1903,15 +1903,15 @@ const InsightsPage = ({ setCurrentPage, openContactModal }) => {
         </FadeIn>
       </section>
 
-      <section className="bg-blue-50/40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto py-16 lg:py-20 border-y border-blue-100/50">
+      <section className="bg-emerald-50/40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto py-16 lg:py-20 border-y border-emerald-100/50">
         <div className="max-w-[1800px] mx-auto">
           <FadeIn delay={100} direction="zoom">
-            <div className="bg-white border border-blue-100 rounded-[2.5rem] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center group cursor-pointer relative overflow-hidden shadow-2xl shadow-blue-100/50 hover:shadow-blue-200 transition-shadow duration-700">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-50/50 to-transparent group-hover:scale-105 transition-transform duration-1000"></div>
+            <div className="bg-white border border-emerald-100 rounded-[2.5rem] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center group cursor-pointer relative overflow-hidden shadow-2xl shadow-emerald-100/50 hover:shadow-emerald-200 transition-shadow duration-700">
+              <div className="absolute inset-0 bg-gradient-to-tr from-emerald-50/50 to-transparent group-hover:scale-105 transition-transform duration-1000"></div>
               <div className="w-full lg:w-1/2 relative z-10">
                 <div className="aspect-[16/9] lg:aspect-[4/3] bg-zinc-50 rounded-3xl flex items-center justify-center border border-zinc-100 shadow-inner overflow-hidden relative">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-100/50 to-transparent"></div>
-                  <BookOpen className="w-16 h-16 lg:w-20 lg:h-20 text-blue-200 group-hover:text-emerald-500 group-hover:scale-110 transition-all duration-700 relative z-10" strokeWidth={1} />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-100/50 to-transparent"></div>
+                  <BookOpen className="w-16 h-16 lg:w-20 lg:h-20 text-emerald-200 group-hover:text-emerald-500 group-hover:scale-110 transition-all duration-700 relative z-10" strokeWidth={1} />
                 </div>
               </div>
               <div className="w-full lg:w-1/2 relative z-10">
@@ -2073,8 +2073,8 @@ const AskGeoApp = () => {
           <>
       {/* --- Hero Section --- */}
       <section id="home" className="relative pt-36 sm:pt-44 pb-24 sm:pb-32 lg:pt-52 lg:pb-40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20 overflow-hidden bg-stone-50">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-100/40 rounded-full blur-[100px] -z-10 animate-blob"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-100/40 rounded-full blur-[100px] -z-10 animate-blob"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-100/40 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000"></div>
 
         <div className="w-full max-w-[1800px] mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className="lg:w-1/2 z-10 relative">
@@ -2152,8 +2152,8 @@ const AskGeoApp = () => {
 
                 {/* Floating Card 2: Trust/Clients */}
                 <div className="absolute -right-12 sm:-right-28 lg:-right-40 top-[35%] lg:top-[40%] bg-white border border-zinc-100 p-4 sm:p-5 rounded-2xl shadow-xl animate-float-delayed z-20 flex items-center gap-4 cursor-default w-max">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600" strokeWidth={1.5} />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600" strokeWidth={1.5} />
                   </div>
                   <div className="pr-4 sm:pr-6">
                     <p className="text-[9px] sm:text-[10px] font-bold text-zinc-400 tracking-widest uppercase mb-1">Trust</p>
@@ -2163,8 +2163,8 @@ const AskGeoApp = () => {
 
                 {/* Floating Card 3: Live Sync */}
                 <div className="absolute -left-4 sm:-left-20 lg:-left-28 -bottom-4 sm:bottom-4 lg:-bottom-8 bg-white border border-zinc-100 p-4 sm:p-5 rounded-2xl shadow-xl animate-float-slow z-30 flex items-center gap-4 cursor-default w-max">
-                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center shrink-0">
-                    <Activity className="w-6 h-6 sm:w-7 sm:h-7 text-rose-600" strokeWidth={1.5} />
+                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
+                    <Activity className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600" strokeWidth={1.5} />
                   </div>
                   <div className="pr-4 sm:pr-6">
                     <p className="text-[9px] sm:text-[10px] font-bold text-zinc-400 tracking-widest uppercase mb-1">Live Sync</p>
@@ -2178,19 +2178,19 @@ const AskGeoApp = () => {
       </section>
 
       {/* --- Clean Divider Stats --- */}
-      <section className="border-y border-blue-100/50 bg-blue-50/40 py-16 lg:py-20">
-        <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 grid sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 divide-y sm:divide-y-0 sm:divide-x divide-blue-200">
+      <section className="border-y border-emerald-100/50 bg-emerald-50/40 py-16 lg:py-20">
+        <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 grid sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 divide-y sm:divide-y-0 sm:divide-x divide-emerald-200">
           <FadeIn delay={100} direction="up" className="py-4 sm:pr-8 text-left">
             <h4 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter text-zinc-900 mb-2">
               <AnimatedNumber end={26} suffix="L+" />
             </h4>
-            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-blue-600 uppercase">Active Investors</p>
+            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-emerald-600 uppercase">Active Investors</p>
           </FadeIn>
           <FadeIn delay={250} direction="up" className="py-8 sm:py-4 sm:px-8 text-left">
             <h4 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter text-zinc-900 mb-2">
               <AnimatedNumber end={133} suffix="K" />
             </h4>
-            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-blue-600 uppercase">Crore AUM</p>
+            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-emerald-600 uppercase">Crore AUM</p>
           </FadeIn>
           <FadeIn delay={400} direction="up" className="py-8 sm:py-4 sm:pl-8 text-left sm:col-span-2 lg:col-span-1 sm:border-t lg:border-t-0 sm:pt-8 lg:pt-4">
             <h4 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter text-emerald-600 mb-2">
@@ -2202,7 +2202,7 @@ const AskGeoApp = () => {
       </section>
 
       {/* --- Core Philosophy --- */}
-      <section className="bg-amber-50/40 py-24 sm:py-32 lg:py-40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full">
+      <section className="bg-emerald-50/40 py-24 sm:py-32 lg:py-40 px-6 sm:px-10 lg:px-16 xl:px-24 w-full">
         <div className="max-w-[1800px] mx-auto">
           <FadeIn className="mb-16 max-w-3xl text-left">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tighter mb-6 text-zinc-900">Our Core Philosophy</h2>
@@ -2216,9 +2216,9 @@ const AskGeoApp = () => {
               { icon: ShieldCheck, title: "Unwavering Trust", desc: "100% transparency in fee structures and investment logic. We win only when your portfolio wins." },
               { icon: Zap, title: "Dynamic Agility", desc: "Market conditions change rapidly. Our strategies adapt in real-time to protect and grow your wealth." }
             ].map((item, idx) => (
-              <FadeIn key={idx} delay={idx * 200} direction="zoom" className="group text-left bg-white p-8 sm:p-10 rounded-[2rem] border border-amber-100 shadow-xl shadow-amber-100/30 hover:-translate-y-2 transition-all duration-500">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-emerald-50 transition-all duration-500 border border-amber-100">
-                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-amber-500 group-hover:text-emerald-600 transition-colors duration-500" strokeWidth={1.5} />
+              <FadeIn key={idx} delay={idx * 200} direction="zoom" className="group text-left bg-white p-8 sm:p-10 rounded-[2rem] border border-emerald-100 shadow-xl shadow-emerald-100/30 hover:-translate-y-2 transition-all duration-500">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-emerald-50 transition-all duration-500 border border-emerald-100">
+                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-500 group-hover:text-emerald-600 transition-colors duration-500" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-medium tracking-tight mb-4 text-zinc-900">{item.title}</h3>
                 <p className="text-zinc-600 font-light text-sm sm:text-base leading-relaxed">{item.desc}</p>
@@ -2250,7 +2250,7 @@ const AskGeoApp = () => {
       </section>
 
       {/* --- Philosophy Section --- */}
-      <section id="about" className="py-24 sm:py-32 lg:py-40 bg-indigo-50/50 px-6 sm:px-10 lg:px-16 xl:px-24 text-left border-b border-indigo-100/50">
+      <section id="about" className="py-24 sm:py-32 lg:py-40 bg-emerald-50/50 px-6 sm:px-10 lg:px-16 xl:px-24 text-left border-b border-emerald-100/50">
         <div className="w-full max-w-[1800px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
             <FadeIn direction="left">
@@ -2277,20 +2277,20 @@ const AskGeoApp = () => {
           
           <div className="grid sm:grid-cols-2 gap-6 relative">
             <FadeIn delay={200} direction="zoom" className="space-y-6 sm:pt-12">
-              <div className="bg-white border border-indigo-100 rounded-[2rem] p-8 sm:p-10 hover:shadow-xl hover:shadow-indigo-100/50 transition-all duration-500 hover:-translate-y-2 group">
-                <PieChart className="text-indigo-500 w-8 h-8 mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
+              <div className="bg-white border border-emerald-100 rounded-[2rem] p-8 sm:p-10 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-500 hover:-translate-y-2 group">
+                <PieChart className="text-emerald-500 w-8 h-8 mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
                 <h4 className="font-medium text-xl mb-2 text-zinc-900">Mutual Funds</h4>
                 <p className="text-zinc-500 text-sm font-light leading-relaxed">Expertly curated schemes for optimal growth.</p>
               </div>
-              <div className="bg-white border border-indigo-100 rounded-[2rem] p-8 sm:p-10 hover:shadow-xl hover:shadow-indigo-100/50 transition-all duration-500 hover:-translate-y-2 group">
-                <TrendingUp className="text-indigo-500 w-8 h-8 mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
+              <div className="bg-white border border-emerald-100 rounded-[2rem] p-8 sm:p-10 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-500 hover:-translate-y-2 group">
+                <TrendingUp className="text-emerald-500 w-8 h-8 mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
                 <h4 className="font-medium text-xl mb-2 text-zinc-900">Equity & ETFs</h4>
                 <p className="text-zinc-500 text-sm font-light leading-relaxed">Direct market participation with strategy.</p>
               </div>
             </FadeIn>
             <FadeIn delay={400} direction="zoom" className="space-y-6">
-              <div className="bg-white border border-indigo-100 rounded-[2rem] p-8 sm:p-10 hover:shadow-xl hover:shadow-indigo-100/50 transition-all duration-500 hover:-translate-y-2 group">
-                <ShieldCheck className="text-indigo-500 w-8 h-8 mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
+              <div className="bg-white border border-emerald-100 rounded-[2rem] p-8 sm:p-10 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-500 hover:-translate-y-2 group">
+                <ShieldCheck className="text-emerald-500 w-8 h-8 mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
                 <h4 className="font-medium text-xl mb-2 text-zinc-900">Bonds & FD</h4>
                 <p className="text-zinc-500 text-sm font-light leading-relaxed">Secure, fixed-income instruments.</p>
               </div>
@@ -2334,12 +2334,12 @@ const AskGeoApp = () => {
       </section>
 
       {/* --- Interactive Tools Teaser --- */}
-      <section className="py-24 sm:py-32 lg:py-40 bg-purple-50/50 text-zinc-900 px-6 sm:px-10 lg:px-16 xl:px-24 relative overflow-hidden text-left border-y border-purple-100/50">
-        <div className="absolute top-0 right-0 w-full max-w-[600px] aspect-square bg-purple-100/60 rounded-full blur-[100px] pointer-events-none animate-blob animation-delay-4000"></div>
+      <section className="py-24 sm:py-32 lg:py-40 bg-emerald-50/50 text-zinc-900 px-6 sm:px-10 lg:px-16 xl:px-24 relative overflow-hidden text-left border-y border-emerald-100/50">
+        <div className="absolute top-0 right-0 w-full max-w-[600px] aspect-square bg-emerald-100/60 rounded-full blur-[100px] pointer-events-none animate-blob animation-delay-4000"></div>
         <div className="w-full max-w-[1800px] mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
           <div className="w-full lg:w-1/2">
             <FadeIn direction="left" className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-purple-100 text-purple-600 text-[10px] sm:text-xs font-bold tracking-widest mb-8 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-emerald-100 text-emerald-600 text-[10px] sm:text-xs font-bold tracking-widest mb-8 shadow-sm">
                 <Calculator className="w-4 h-4 animate-pulse" strokeWidth={2} /> INTERACTIVE TOOLS
               </div>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tighter mb-6 leading-[1.1]">
@@ -2355,7 +2355,7 @@ const AskGeoApp = () => {
           </div>
           <div className="w-full lg:w-1/2">
             <FadeIn delay={300} direction="zoom">
-              <div className="bg-white border border-purple-100 p-8 sm:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl shadow-purple-200/50 hover:shadow-emerald-200/40 transition-shadow duration-700">
+              <div className="bg-white border border-emerald-100 p-8 sm:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl shadow-emerald-200/50 hover:shadow-emerald-200/40 transition-shadow duration-700">
                 <div className="flex justify-between items-center mb-8 border-b border-zinc-100 pb-6">
                   <div>
                     <h4 className="text-xl sm:text-2xl font-medium text-zinc-900 mb-2">SIP Calculator Pro</h4>
@@ -2390,10 +2390,10 @@ const AskGeoApp = () => {
       </section>
 
       {/* --- Pre-Footer CTA --- */}
-      <section className="bg-teal-50/50 py-24 sm:py-32 lg:py-40 px-6 sm:px-10 lg:px-16 xl:px-24 relative overflow-hidden text-center border-t border-teal-100/50">
-        <div className="w-full max-w-[1800px] mx-auto relative z-10 flex flex-col items-center">
-          <FadeIn direction="up" className="flex flex-col items-center max-w-3xl">
-            <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-8 border border-teal-100 shadow-xl shadow-teal-100/50">
+      <section className="bg-emerald-50/50 py-24 sm:py-32 lg:py-40 px-6 sm:px-10 lg:px-16 xl:px-24 relative overflow-hidden border-t border-emerald-100/50">
+        <div className="w-full max-w-[1800px] mx-auto relative z-10 flex flex-col items-start">
+          <FadeIn direction="up" className="flex flex-col items-start max-w-3xl text-left">
+            <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-8 border border-emerald-100 shadow-xl shadow-emerald-100/50">
               <TrendingUp className="w-10 h-10 text-emerald-600" strokeWidth={1.5} />
             </div>
             <h2 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tighter text-zinc-950 mb-8 leading-[1.05]">
@@ -2405,7 +2405,7 @@ const AskGeoApp = () => {
             <p className="text-lg sm:text-xl lg:text-2xl text-zinc-600 font-light mb-12 leading-relaxed">
               Join over 26 Lakh investors who trust Ask Geo to navigate the complexities of wealth creation and preservation.
             </p>
-            <button onClick={() => openContactModal('Start Your Journey')} className="px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-medium transition-all duration-300 shadow-[0_10px_40px_rgba(16,185,129,0.3)] flex items-center gap-3 text-base sm:text-lg w-full sm:w-auto justify-center group hover:-translate-y-1">
+            <button onClick={() => openContactModal('Start Your Journey')} className="px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-medium transition-all duration-300 shadow-[0_10px_40px_rgba(16,185,129,0.3)] inline-flex items-center gap-3 text-base sm:text-lg w-full sm:w-auto justify-center group hover:-translate-y-1">
               Start Your Journey <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
             </button>
           </FadeIn>
