@@ -9,17 +9,26 @@ import {
 } from 'lucide-react';
 
 // --- BACKEND API CONFIGURATION ---
-// Ensure your server.js backend is running on this endpoint.
-const API_ENDPOINT = "http://localhost:3001/api/send-email";
-const TARGET_EMAIL = "complete.anant@gmail.com";
+// Directly using the deployed Render URL to ensure compatibility across all environments
+const API_ENDPOINT = "https://ask-geo.onrender.com/api/send-email";
+const TARGET_EMAIL = "complete.anant@hotmail.com";
 
 const sendEmailViaBackend = async (subject, htmlBody, attachments = []) => {
   try {
-    // Format attachments for Nodemailer (expects 'path' for base64 Data URIs)
-    const formattedAttachments = attachments.map(att => ({
-      filename: att.filename,
-      path: att.dataUri 
-    }));
+    // Format attachments for Nodemailer (extract base64 content safely)
+    const formattedAttachments = attachments.map(att => {
+      let base64String = '';
+      if (att.dataUri) {
+         base64String = att.dataUri.includes(',') ? att.dataUri.split(',')[1] : att.dataUri;
+      } else if (att.content) {
+         base64String = att.content;
+      }
+      return {
+        filename: att.filename,
+        content: base64String,
+        encoding: 'base64' 
+      };
+    });
 
     const response = await fetch(API_ENDPOINT, {
       method: 'POST',
@@ -35,13 +44,24 @@ const sendEmailViaBackend = async (subject, htmlBody, attachments = []) => {
     });
     
     if (!response.ok) {
-      throw new Error(`HTTP Error: ${response.status}`);
+      let errorDetail = await response.text();
+      try {
+         const json = JSON.parse(errorDetail);
+         if (json.error) errorDetail = json.error;
+      } catch(e) {}
+      throw new Error(`HTTP Error: ${response.status} - ${errorDetail}`);
     }
     
     const data = await response.json();
     console.log('Backend Delivery Status:', data);
   } catch (error) {
     console.error('Backend Delivery Error:', error);
+    if (error.message.includes('Failed to fetch') || error.name === 'TypeError') {
+      console.error(
+        "🚨 CRITICAL ERROR: The frontend cannot reach the backend server at " + API_ENDPOINT + "\n" +
+        "Ensure your backend is running, or check your VITE_API_URL environment variable."
+      );
+    }
   }
 };
 
