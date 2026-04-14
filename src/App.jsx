@@ -155,7 +155,7 @@ const TOTAL_LOAD_TIME_MS = 10000; // 10 seconds
 
 // --- GEMINI API INTEGRATION ---
 const callGeminiAPI = async (prompt) => {
-  const apiKey = ""; 
+  const apiKey = "AIzaSyBNhUjAtl7ks-ojlQN6cSyohrVAkwGXIkk"; 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
   const payload = {
     contents: [{ parts: [{ text: prompt }] }],
