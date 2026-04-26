@@ -3,11 +3,14 @@ import {
   Clock, AlertTriangle, ChevronRight, Mail, Phone, Briefcase, Lock, 
   ShieldAlert, LogOut, CheckCircle2, Zap, PenTool, X, KeyRound, User, BookOpen, FastForward
 } from 'lucide-react';
+import { initializeApp } from 'firebase/app';
+import { 
+  getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged 
+} from 'firebase/auth';
 
 // --- SUPABASE CONFIGURATION ---
 const SUPABASE_URL = "https://hbkceapaopwxbcolpegd.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhia2NlYXBhb3B3eGJjb2xwZWdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxODAxMTEsImV4cCI6MjA5Mjc1NjExMX0.MhUnLQiIXupAsb5zLNAu8dLB9QwMi-8sIxyp0TR7rLA";
-// Note: Service Role key is used client-side here exclusively to bypass the RLS restriction on Admin reads for this standalone environment.
 const SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhia2NlYXBhb3B3eGJjb2xwZWdkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzE4MDExMSwiZXhwIjoyMDkyNzU2MTExfQ.E3vx3sSKryvv7v449e_pVdzV0ixIENcOKv6OUxCHvak";
 
 // --- API LAYER (Manual Upsert Logic to Guarantee 1 Row) ---
@@ -18,17 +21,17 @@ const api = {
     'Content-Type': 'application/json',
     'Prefer': 'return=representation'
   },
-  get: async (table: string, query: string) => {
+  get: async (table, query) => {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${query}`, { headers: api.headers });
     if (!res.ok) throw new Error(await res.text());
     return res.json();
   },
-  post: async (table: string, body: any) => {
+  post: async (table, body) => {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, { method: 'POST', headers: api.headers, body: JSON.stringify(body) });
     if (!res.ok) throw new Error(await res.text());
     return res.json();
   },
-  patch: async (table: string, query: string, body: any) => {
+  patch: async (table, query, body) => {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${query}`, { method: 'PATCH', headers: api.headers, body: JSON.stringify(body) });
     if (!res.ok) throw new Error(await res.text());
     return res.json();
@@ -101,13 +104,7 @@ const globalStyles = `
 `;
 
 // --- QUESTION BANK (100% Auto-Graded) ---
-type Question = {
-  id: string; section: "MCQ" | "DEBUGGING"; difficulty: "Medium" | "Tough" | "Practical";
-  type: "single" | "multiple"; question: string; options: string[]; correctAnswers: string[];
-  maxScore: number;
-};
-
-const QUESTIONS: Question[] = [
+const QUESTIONS = [
   // 30 MCQs
   { id: "q1", section: "MCQ", difficulty: "Medium", type: "single", question: "Which code correctly aggregates amount by id?\nrecords = [{id: 1, amount: 100}, {id: 2, amount: 200}, {id: 1, amount: 50}]", options: ["result = {}; for r in records: result[r['id']] = r['amount']", "result = {}; for r in records: result[r['id']] = result.get(r['id'], 0) + r['amount']", "result = []; for r in records: result[r['id']] += r['amount']", "result = set(records)"], correctAnswers: ["result = {}; for r in records: result[r['id']] = result.get(r['id'], 0) + r['amount']"], maxScore: 1.5 },
   { id: "q2", section: "MCQ", difficulty: "Medium", type: "single", question: "What is the best way to handle a bad row in a large ETL file without stopping the entire job?", options: ["Ignore all errors silently", "Wrap row-level parsing in try/except, log the bad row, continue processing", "Restart the pipeline every time an error occurs", "Delete the source file"], correctAnswers: ["Wrap row-level parsing in try/except, log the bad row, continue processing"], maxScore: 1.5 },
@@ -153,19 +150,6 @@ const QUESTIONS: Question[] = [
   { id: "q40", section: "DEBUGGING", difficulty: "Tough", type: "single", question: "Python schema validation bug:\ndef transform(row): return {'id': row['id'], 'amount': float(row['amount'])}\nThis fails when amount is blank. How do you fix it?", options: ["float('') throws ValueError if amount is blank", "row['id'] is missing", "Dict cannot be returned", "The function requires a return type hint"], correctAnswers: ["float('') throws ValueError if amount is blank"], maxScore: 3 },
 ];
 
-// --- TYPES ---
-type CandidateData = { fullName: string; email: string; phone: string; experience: string; company: string; };
-type Answer = { qId: string; selectedOptions: string[]; timeTaken: number; autoSubmitted: boolean; score: number; skipped?: boolean };
-type Violation = { type: string; timestamp: number; penalty: number; qId: string; };
-type Submission = { 
-  id: string; 
-  candidate: CandidateData; 
-  violationsCount: number; 
-  score: number; 
-  metrics: { totalTime: number; mcq: number; debug: number; status: string; }; 
-  timestamp: number;
-};
-
 // --- UTILS ---
 const getTodayPassword = () => {
   const d = new Date();
@@ -175,7 +159,7 @@ const getTodayPassword = () => {
   return `${day}${month}${year}`;
 };
 
-const calculateScore = (q: Question, a: Answer) => {
+const calculateScore = (q, a) => {
   if (q.type === 'single') return q.correctAnswers?.[0] === a.selectedOptions[0] ? q.maxScore : 0;
   if (q.type === 'multiple') {
     const correct = q.correctAnswers || [];
@@ -189,7 +173,7 @@ const calculateScore = (q: Question, a: Answer) => {
   return 0;
 };
 
-const determineStatus = (score: number) => {
+const determineStatus = (score) => {
   if (score >= 48) return 'Strong'; // 80% of 60
   if (score >= 36) return 'Consider'; // 60% of 60
   return 'Weak';
@@ -233,7 +217,7 @@ const Footer = () => (
 );
 
 // --- VIEWS ---
-const PasskeyView = ({ onValidPasskey, onAdminLogin }: any) => {
+const PasskeyView = ({ onValidPasskey, onAdminLogin }) => {
   const [pwd, setPwd] = useState('');
   const [err, setErr] = useState('');
 
@@ -274,7 +258,7 @@ const PasskeyView = ({ onValidPasskey, onAdminLogin }: any) => {
   );
 };
 
-const InfoView = ({ candidate, setCandidate, onComplete }: any) => {
+const InfoView = ({ candidate, setCandidate, onComplete }) => {
   const [err, setErr] = useState('');
 
   const handleNext = () => {
@@ -321,10 +305,10 @@ const InfoView = ({ candidate, setCandidate, onComplete }: any) => {
   );
 };
 
-const InstructionsView = ({ onStartTest }: any) => {
+const InstructionsView = ({ onStartTest }) => {
   const [checks, setChecks] = useState([false, false, false, false]);
   const allChecked = checks.every(Boolean);
-  const toggleCheck = (index: number) => { const newChecks = [...checks]; newChecks[index] = !newChecks[index]; setChecks(newChecks); };
+  const toggleCheck = (index) => { const newChecks = [...checks]; newChecks[index] = !newChecks[index]; setChecks(newChecks); };
 
   const INSTRUCTIONS = [
     { id: '01', title: 'Structure', text: 'You will receive 30 shuffled MCQs and 5 shuffled debug scenarios.', isCritical: false },
@@ -381,7 +365,7 @@ const InstructionsView = ({ onStartTest }: any) => {
 
 const TestView = ({ 
   activeQuestions, qIndex, timeLeft, currentSelection, setCurrentSelection, handleNext, showViolationModal, isNotesOpen, setIsNotesOpen, notes, setNotes, isSubmitting 
-}: any) => {
+}) => {
   const q = activeQuestions[qIndex];
   if (!q) return null;
 
@@ -418,14 +402,14 @@ const TestView = ({
         <div className="minimal-card p-8 rounded-sm flex-1 mb-6">
           <h3 className="text-sm text-white font-normal leading-relaxed whitespace-pre-wrap mb-8 tracking-wide">{q.question}</h3>
           <div className="space-y-3">
-            {q.options?.map((opt: string, i: number) => {
+            {q.options?.map((opt, i) => {
               const isSelected = currentSelection.includes(opt);
               return (
                 <div 
                   key={i} 
                   onClick={() => {
                     if (q.type === 'single') setCurrentSelection([opt]);
-                    else setCurrentSelection((prev: string[]) => prev.includes(opt) ? prev.filter(x => x !== opt) : [...prev, opt]);
+                    else setCurrentSelection(prev => prev.includes(opt) ? prev.filter(x => x !== opt) : [...prev, opt]);
                   }}
                   className={`p-4 rounded-sm border cursor-pointer transition-all duration-300 flex items-center gap-4 group slide-in-right ${isSelected ? 'bg-[#111] border-white text-white scale-[1.01]' : 'bg-transparent border-[#222] hover:border-[#555] hover:bg-[#050505]'}`}
                   style={{ animationDelay: `${i * 0.08}s` }}
@@ -489,9 +473,9 @@ const TestView = ({
   );
 };
 
-const ResultView = ({ answers, candidate, violations, activeQuestions }: any) => {
-  const totalScore = answers.reduce((acc: number, a: any) => acc + a.score, 0);
-  const totalPossibleScore = activeQuestions.reduce((acc: number, q: any) => acc + q.maxScore, 0); 
+const ResultView = ({ answers, candidate, violations, activeQuestions }) => {
+  const totalScore = answers.reduce((acc, a) => acc + a.score, 0);
+  const totalPossibleScore = activeQuestions.reduce((acc, q) => acc + q.maxScore, 0); 
   const status = determineStatus(totalScore);
 
   return (
@@ -535,7 +519,7 @@ const ResultView = ({ answers, candidate, violations, activeQuestions }: any) =>
   );
 };
 
-const AdminLogin = ({ onLogin }: any) => {
+const AdminLogin = ({ onLogin }) => {
   const [pwd, setPwd] = useState('');
   return (
     <div className="flex-1 flex items-center justify-center p-4 animate-fade-in-up">
@@ -556,9 +540,9 @@ const AdminLogin = ({ onLogin }: any) => {
   );
 };
 
-const AdminDashboard = ({ QUESTIONS, onLogout }: any) => {
-  const [subs, setSubs] = useState<Submission[]>([]);
-  const [selectedSub, setSelectedSub] = useState<Submission | null>(null);
+const AdminDashboard = ({ QUESTIONS, onLogout }) => {
+  const [subs, setSubs] = useState([]);
+  const [selectedSub, setSelectedSub] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -566,14 +550,14 @@ const AdminDashboard = ({ QUESTIONS, onLogout }: any) => {
         const data = await api.get('submissions', 'select=*,candidates(*)');
         if (!data) return;
 
-        const formatted = data.map((d: any) => ({
+        const formatted = data.map((d) => ({
           id: d.id,
           candidate: { fullName: d.candidates.full_name, email: d.candidates.email, phone: d.candidates.phone || '', experience: d.candidates.experience_years || '0', company: d.candidates.current_company || '' },
           violationsCount: d.total_violations || 0,
           metrics: { totalTime: d.total_time_taken_seconds, mcq: d.mcq_score, debug: d.debugging_score, status: d.status },
           timestamp: new Date(d.created_at).getTime(),
         }));
-        setSubs(formatted.sort((a: any, b: any) => b.timestamp - a.timestamp));
+        setSubs(formatted.sort((a, b) => b.timestamp - a.timestamp));
       } catch(e) { console.error(e); }
     };
     fetchData();
@@ -674,14 +658,14 @@ const AdminDashboard = ({ QUESTIONS, onLogout }: any) => {
 };
 
 export default function App() {
-  const [view, setView] = useState<'gate-passkey' | 'gate-info' | 'instructions' | 'test' | 'result' | 'adminLogin' | 'adminDashboard'>('gate-passkey');
-  const [candidate, setCandidate] = useState<CandidateData>({ fullName: '', email: '', phone: '', experience: '', company: '' });
-  const [activeQuestions, setActiveQuestions] = useState<Question[]>([]);
+  const [view, setView] = useState('gate-passkey');
+  const [candidate, setCandidate] = useState({ fullName: '', email: '', phone: '', experience: '', company: '' });
+  const [activeQuestions, setActiveQuestions] = useState([]);
   const [qIndex, setQIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(59);
-  const [answers, setAnswers] = useState<Answer[]>([]);
-  const [violations, setViolations] = useState<Violation[]>([]);
-  const [currentSelection, setCurrentSelection] = useState<string[]>([]);
+  const [answers, setAnswers] = useState([]);
+  const [violations, setViolations] = useState([]);
+  const [currentSelection, setCurrentSelection] = useState([]);
   const [showViolationModal, setShowViolationModal] = useState(false);
   const [adminAuth, setAdminAuth] = useState(false);
   const [notes, setNotes] = useState('');
@@ -691,7 +675,7 @@ export default function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const isSubmittingRef = useRef(false);
   
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef(null);
 
   useEffect(() => {
     if (view !== 'test') return;
@@ -724,7 +708,7 @@ export default function App() {
     setActiveQuestions([...mcqs, ...debugs]);
   };
 
-  const triggerViolation = (type: string) => {
+  const triggerViolation = (type) => {
     if (!activeQuestions[qIndex] || isSubmittingRef.current) return;
     setViolations(prev => [...prev, { type, timestamp: Date.now(), penalty: 30, qId: activeQuestions[qIndex].id }]);
     setShowViolationModal(true);
@@ -737,7 +721,7 @@ export default function App() {
     if (timerRef.current) clearInterval(timerRef.current);
     
     const q = activeQuestions[qIndex];
-    const answerData: Answer = {
+    const answerData = {
       qId: q.id,
       selectedOptions: skipped ? [] : currentSelection,
       timeTaken: 59 - timeLeft,
@@ -764,7 +748,7 @@ export default function App() {
     }
   };
 
-  const submitTest = async (finalAnswers: Answer[]) => {
+  const submitTest = async (finalAnswers) => {
     let mcq = 0, debug = 0, autoSubs = 0;
     finalAnswers.forEach(a => {
       const q = activeQuestions.find(x => x.id === a.qId);
